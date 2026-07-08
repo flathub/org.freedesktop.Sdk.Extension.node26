@@ -36,7 +36,8 @@ modules:
       - --shared-openssl
       - --shared-zlib
       - --with-intl=system-icu
-
+      - --ninja
+      
   - name: yarn
     buildsystem: simple
     build-commands:
