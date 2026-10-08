@@ -13,6 +13,10 @@ build-options:
   prepend-ld-library-path: /usr/lib/sdk/node26/lib
   append-path: /usr/lib/sdk/rust-stable/bin
   strip: true
+  # mold
+  env:
+    - RUSTFLAGS: "-C link-arg=-fuse-ld=mold"
+    - LDFLAGS: "-fuse-ld=mold"
 cleanup:
   - /lib/pkgconfig
   - /share/doc
