@@ -15,8 +15,8 @@ build-options:
   strip: true
   # mold
   env:
-    - RUSTFLAGS: "-C link-arg=-fuse-ld=mold"
-    - LDFLAGS: "-fuse-ld=mold"
+    - RUSTFLAGS: -C link-arg=-fuse-ld=mold
+    - LDFLAGS: -fuse-ld=mold
 cleanup:
   - /lib/pkgconfig
   - /share/doc
@@ -26,8 +26,8 @@ modules:
   - name: node
     sources:
       - type: archive
-        url: https://nodejs.org/dist/v26.11.0/node-v26.11.0.tar.xz
-        sha256: aaad9242704524109e88d48be7bb7b7943486d931e740a352c02e97e107f18c9
+        url: https://nodejs.org/dist/v26.12.1/node-v26.12.1.tar.xz
+        sha256: 053e3b296859b6d8d93f99ef97fa9cec1c4ee171c72968100c649978c1dbd38c
         x-checker-data:
           type: json
           url: https://nodejs.org/dist/index.json
