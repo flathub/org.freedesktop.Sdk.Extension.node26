@@ -15,8 +15,8 @@ build-options:
   strip: true
   # mold
   env:
-    - RUSTFLAGS: "-C link-arg=-fuse-ld=mold"
-    - LDFLAGS: "-fuse-ld=mold"
+    - RUSTFLAGS: -C link-arg=-fuse-ld=mold
+    - LDFLAGS: -fuse-ld=mold
 cleanup:
   - /lib/pkgconfig
   - /share/doc
@@ -26,8 +26,8 @@ modules:
   - name: node
     sources:
       - type: archive
-        url: https://nodejs.org/dist/v26.11.0/node-v26.11.0.tar.xz
-        sha256: aaad9242704524109e88d48be7bb7b7943486d931e740a352c02e97e107f18c9
+        url: https://nodejs.org/dist/v26.12.0/node-v26.12.0.tar.xz
+        sha256: ce59f9038dda0e637656fb1c36cf52c07c637922fd81d419dbba2ec129afbd35
         x-checker-data:
           type: json
           url: https://nodejs.org/dist/index.json
@@ -38,8 +38,6 @@ modules:
           url-query: >-
             "https://nodejs.org/dist/\($tag)/node-\($tag).tar.xz"
           is-main-source: true
-      - type: patch
-        path: patches/add_climits_include.patch
     config-opts:
       - --openssl-use-def-ca-store
       - --shared-openssl
